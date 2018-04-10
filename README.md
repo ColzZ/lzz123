@@ -1,11 +1,11 @@
 # lzz123
-##1.  下载 Git
+## 1.  下载 Git
 【github新建库】
 【建立SSH连接】
 【git本地版本库】
 【git-github 提交】
 
-##2.  github 新建库
+## 2.  github 新建库
 ![库栈.png](https://upload-images.jianshu.io/upload_images/8534714-3d2b4cba57681ad2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
 ## 3. 建立SSH连接通道
@@ -27,5 +27,7 @@
 ```
 
 ### 5. Git提交时显示用户 unknown
+```
 $ git config --global user.name "your_name"
 $ git config --global user.email "your_email@youremail.com"
+```
