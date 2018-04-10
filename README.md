@@ -16,7 +16,15 @@
   4. github 添加ssh  **Key is already in use** 可能是相同邮箱秘钥  删除就好
 
 ##  4. 文件夹 Git Bash Here =>
- ![git push.png](https://upload-images.jianshu.io/upload_images/8534714-1befdff41330101e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+```
+ echo "# lzz123" >> README.md
+ git init
+ git add README.md
+ git commit -m "first commit"
+ --
+ git remote add origin https://github.com/colzz/lzz123.git
+ git push -u origin master
+```
 
 ### 5. Git提交时显示用户 unknown
 $ git config --global user.name "your_name"
