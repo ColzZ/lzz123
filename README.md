@@ -18,3 +18,6 @@
 ##  4. 文件夹 Git Bash Here =>
  ![git push.png](https://upload-images.jianshu.io/upload_images/8534714-1befdff41330101e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
+### 5. Git提交时显示用户 unknown
+$ git config --global user.name "your_name"
+$ git config --global user.email "your_email@youremail.com"
