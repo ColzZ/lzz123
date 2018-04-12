@@ -45,3 +45,5 @@ $ git push
 $ git push -u origin master
 ```
 不带任何参数的git push，默认只推送当前分支，这叫做simple方式。此外，还有一种matching方式，会推送所有有对应的远程分支的本地分支。Git 2.0版本之前，默认采用matching方法，现在改为默认采用simple方式。
+
+ [txt](./blob/master/text/ES6.txt)
