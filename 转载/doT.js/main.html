@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOT</title>
+  <script src="./doT.js"></script></head>
+<body>
+
+
+
+  <table id="box">
+    <script type="text/template" charset="utf-8" id="ex4">
+      <tr>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+      </tr>
+      {{if(it.length>0 ){ }}
+        {{for(var i=0;i< it.length;i++) { }}
+          <tr><td>{{=it[i].name }}</td><td>{{=it[i].age }}</td><td>{{=it[i].sex||'' }}</td></tr>
+        {{ } }}
+      {{ }else{ }}
+        <tr>没有数据</tr>
+      {{ } }}
+    </script>
+  </table>
+  <script>
+    window.onload = function() {
+      var data4=[{"name":"jon","age":"23","sex":"男"},{"name":"aaa","age":"50"}];
+      var doTEle = document.getElementById('ex4').innerHTML;
+      var boxEle = document.getElementById("box");
+      boxEle.innerHTML = doT.template(doTEle)(data4);
+    }
+
+  </script>
+</body>
+</html>
