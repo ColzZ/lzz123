@@ -1,0 +1,25 @@
+node-v 6.10.2
+npm-v  3.10.10
+
+
+【系统变量-PATH】
+C:\Users\liuzhenhe\AppData\Roaming\npm;
+C:\Program Files (x86)\nodejs\node_global;  // nodejs 全局安装路径
+D:\exe\Microsoft VS Code\bin
+
+【用户变量-Path】
+C:\Program Files (x86)\Intel\iCLS Client\;
+C:\Program Files\Intel\iCLS Client\;
+%SystemRoot%\system32;
+%SystemRoot%;
+%SystemRoot%\System32\Wbem;
+%SYSTEMROOT%\System32\WindowsPowerShell\v1.0\;
+C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x86;
+C:\Program Files (x86)\Intel\OpenCL SDK\2.0\bin\x64;
+C:\Program Files\Intel\Intel(R) Management Engine Components\DAL;
+C:\Program Files\Intel\Intel(R) Management Engine Components\IPT;
+C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\DAL;
+C:\Program Files (x86)\Intel\Intel(R) Management Engine Components\IPT;
+D:\ProgramFile\svntortise\bin;
+C:\Program Files (x86)\nodejs\;
+D:\exe\Git\cmd
