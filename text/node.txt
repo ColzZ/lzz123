@@ -1,5 +1,6 @@
-node-v 6.10.2
-npm-v  3.10.10
+﻿node-v      8.11.1
+npm-v       5.6.0
+webpack-v   3.0.0
 
 
 【系统变量-PATH】
