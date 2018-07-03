@@ -1,31 +1,31 @@
 ﻿{
     "workbench.colorTheme": "Atom One Dark",
     "workbench.iconTheme": "vscode-icons",
-    // 字体大小
+    /* 字体大小 */
     "editor.fontSize": 14,
-    // 窗口的缩放级别
+    /* 窗口的缩放级别 */
     "window.zoomLevel": 0,
-    // 是否有小地图
+    /* 是否有小地图 */
     "editor.minimap.enabled": true,
-    // tab距离
+    /* tab距离 */
     "editor.tabSize": 2,
-    // 剪裁尾随空格
+    /* 剪裁尾随空格 */
     "files.trimTrailingWhitespace": true,
     "files.associations": {
         "*.tpl": "html"
     },
     "workbench.colorCustomizations": {
-        // 选中字体背景
-        "editor.selectionBackground": "#040",
-        "editor.selectionHighlightBackground": "#040",
+        /* 选中字体背景 */
+        "editor.selectionBackground": "#050",
+        "editor.selectionHighlightBackground": "#050",
         "editor.wordHighlightBackground": "#0000",
         "editor.wordHighlightStrongBackground": "#0000",
-        // 头部文档颜色
+        /* 头部文档颜色 */
         "tab.activeBackground": "#999",
         "tab.inactiveBackground": "#0000",
-        // tab 边框颜色
+        /* tab 边框颜色 */
         "tab.border": "#999",
-        // 光标颜色
+        /* 光标颜色 */
         "editorCursor.foreground": "#fff"
     },
     "editor.multiCursorModifier": "ctrlCmd",
