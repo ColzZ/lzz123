@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    .box {
+      position: relative;
+    }
+
+    .box:after {
+      content: ' ';
+      display: block;
+      clear: both;
+      overflow: hidden;
+    }
+
+    .left {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 200px;
+      border: 2px solid #f00;
+    }
+
+    .right {
+      float: left;
+      margin-left: 200px;
+      width: calc(100% - 200px);
+      border: 2px solid #0f0;
+    }
+
+
+    .li {
+      position: relative;
+    }
+
+    .li:after {
+      content: ' ';
+      display: block;
+      clear: both;
+      overflow: hidden;
+    }
+
+    .li .left {
+      border: 2px solid #00f;
+    }
+
+    .li .right {
+      border: 2px solid #ff0;
+    }
+
+    .li .li .left {
+      border: 2px solid #f0f;
+    }
+
+    .li .li .right {
+      border: 2px solid #0ff;
+    }
+
+    .item {
+      display: inline-block;
+      width: 200px;
+      height: 20px;
+    }
+
+    .two .left {
+      width: 400px;
+    }
+
+    .two .right {
+      margin-left: 400px;
+    }
+  </style>
+</head>
+
+<body>
+  <div>
+    <div class="box">
+      <div class="left">乘用车</div>
+      <div class="right">
+        <div class="li">
+          <div class="left">主流</div>
+          <div class="right">
+            <div class="li">
+              <div class="left">韩国</div>
+              <div class="right">
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+              </div>
+            </div>
+            <div class="li">
+              <div class="left">日美</div>
+              <div class="right">
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+              </div>
+            </div>
+            <div class="li">
+              <div class="left">美系</div>
+              <div class="right">
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+              </div>
+            </div>
+            <div class="li">
+              <div class="left">欧系</div>
+              <div class="right">
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="li">
+          <div class="left">豪华</div>
+          <div class="right">
+            <div class="li">
+              <div class="left">韩国</div>
+              <div class="right">
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+              </div>
+            </div>
+            <div class="li">
+              <div class="left">日美</div>
+              <div class="right">
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+                <div class="item">1111</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="li two">
+          <div class="left">自主</div>
+          <div class="right">
+            <div class="item">1111</div>
+            <div class="item">1111</div>
+            <div class="item">1111</div>
+            <div class="item">1111</div>
+            <div class="item">1111</div>
+            <div class="item">1111</div>
+            <div class="item">1111</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .d2, .d3 {
+      border-bottom: 2px solid #f00;
+    }
+    .d2:first-of-type {
+      border-bottom: 2px solid #00f;
+    }
+    .d2:nth-last-of-type(2) {
+      border-bottom: 2px solid #00f;
+    }
+  </style>
+
+  <div class="d1">
+    <br />
+    <br />
+    <div class="d2">2</div>
+    <br />
+    <br />
+    <div class="d2">2</div>
+    <br />
+    <br />
+    <div class="d2">2</div>
+    <br />
+    <br />
+    <div class="d3">3</div>
+
+  </div>
+</body>
+
+</html>
