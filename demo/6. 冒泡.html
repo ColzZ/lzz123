@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>事件</title>
+</head>
+
+<body>
+
+  <div>
+    <button>
+      <p style="background: red">点击捕获</p>
+    </button>
+  </div>
+  <script>
+    var oP = document.querySelector('p');
+    var oB = document.querySelector('button');
+    var oD = document.querySelector('div');
+    var oBody = document.querySelector('body');
+
+    /* **************** 原生绑定事件 **************** */
+    oP.onclick = function () {
+      console.log('p标签被点击')
+    };
+    oB.onclick = function () {
+      console.log("button被点击")
+    };
+    oD.onclick = function () {
+      console.log('div被点击')
+    };
+    oBody.onclick = function () {
+      console.log('body被点击')
+    };
+
+    /* **************** 二级绑定事件 【模拟捕获 body -> div -> button -> p】  IE 9及以上 **************** */
+    oP.addEventListener('click', function () {
+      console.log(1, 'p标签被点击')
+    }, true);
+
+    oB.addEventListener('click', function () {
+      console.log(1, "button被点击")
+    }, true);
+
+    oD.addEventListener('click', function () {
+      console.log(1, 'div被点击')
+    }, true);
+
+    oBody.addEventListener('click', function (e) {
+      console.log(1, 'body被点击')
+    }, true);
+
+    /* **************** IE 6/7/8 **************** */
+    // oP.attachEvent('onclick', function () {
+    //   console.log(2, 'p标签被点击')
+    // });
+    // oB.attachEvent('onclick', function () {
+    //   console.log(2, "button被点击")
+    // });
+    // oD.attachEvent('onclick', function () {
+    //   console.log(2, 'div被点击')
+    // });
+    // oBody.attachEvent('onclick', function () {
+    //   console.log(2, 'body被点击')
+    // });
+
+
+    /*
+    addEventListener(event,funtionName,useCapture)
+    event: 事件的类型如 “click”
+    funtionName：方法名
+    useCapture(可选)：布尔值，指定事件是否在捕获或冒泡阶段执行。
+      true - 事件句柄在捕获阶段执行
+      false- false- 默认。事件句柄在冒泡阶段执行
+    //  */
+
+
+    /*
+    1.on事件会被后面的on的事件覆盖
+    2.addEventListener 则不会覆盖。
+    3.特别说明addEventListener不被IE9以下兼容，IE9以下用使用attachEvent()
+    // */
+
+    /*
+      IE 6/7/8
+      只有事件冒牌
+    */
+  </script>
+</body>
+
+</html>
