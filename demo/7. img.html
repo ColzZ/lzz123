@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title></title>
+  <style>
+    .item1 {
+      width: 500px;
+      height: 600px;
+      background-color: #CCCCCC;
+      border: 1px solid #ff0000;
+    }
+    .item2 {
+      width: 600px;
+      height: 500px;
+      background-color: #CCCCCC;
+      border: 1px solid #ff0000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="item item1">
+    <img src="./juventus.jpg" />
+  </div>
+  <div class="item item2">
+    <img src="./juventus.jpg" />
+  </div>
+  <script type="text/javascript" src="./jq_183.js"></script>
+  <script>
+    $(function () {
+      $.fn.imageSize = function (type) {
+        this.each(function () {
+          var This = $(this);
+          var $img = This.find(">img");
+          var box_width = This.width();
+          var box_height = This.height();
+          getRealImageSize($img.attr("src"), function (w, h) {
+            if (type == "contain") {
+              if (box_width / box_height <= w / h) {
+                $img.css({
+                  width: "100%",
+                  height: "auto",
+                  paddingTop: ((box_height - box_width * h / w) / 2) + "px"
+                });
+              } else {
+                $img.css({
+                  height: "100%",
+                  width: "auto",
+                  paddingLeft: ((box_width - box_height * w / h) / 2) + "px"
+                });
+              }
+            } else if (type == "cover") {
+              This.css("overflow", "hidden");
+              if (box_width / box_height <= w / h) {
+                $img.css({
+                  width: "auto",
+                  height: "100%"
+                });
+              } else {
+                $img.css({
+                  height: "auto",
+                  width: "100%"
+                });
+              }
+            } else {
+              This.css("overflow", "hidden");
+            }
+          });
+        });
+        function getRealImageSize(url, callback) {
+          var img = new Image();
+          img.src = url;
+
+          if (img.complete) {
+            callback(img.width, img.height);
+          } else {
+            img.onload = function () {
+              callback(img.width, img.height);
+            }
+          }
+        }
+      };
+      $(".item").imageSize("contain");
+    });
+  </script>
+</body>
+
+</html>
