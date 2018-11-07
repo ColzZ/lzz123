@@ -1,0 +1,68 @@
+<!--  table/tr > div/span 问题  -->
+<!--
+  ie      ->  html跳出来   css确是table嵌套的
+  chrome  ->  html跳出来   css也会跳出来--不会受table路径限制
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .div1{
+      border: 1px solid #0f0;
+    }
+    .div2{
+      border: 1px solid #ff0;
+    }
+    .div3{
+      border: 1px solid #f0f;
+    }
+    table{
+      border: 1px solid #f00;
+    }
+    table .div1{
+      background: #aaa;
+    }
+    table .div2{
+      background: #999;
+    }
+    table .div3{
+      background: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <table class="table">
+      <span class="div1">
+        div1
+      </span>
+      <tr>
+        <span class="div2">
+          div2
+        </span>
+        <td>
+          <span class="div3">
+            div3
+          </span>
+          111
+        </td>
+        <td>
+          222
+        </td>
+      </tr>
+      <tr>
+        <td>
+          333
+        </td>
+        <td>
+          444
+        </td>
+      </tr>
+    </table>
+  </div>
+</body>
+</html>
