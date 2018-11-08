@@ -1,0 +1,13 @@
+﻿1.  Atom One Dark Theme
+2.  Auto Close Tag
+3.  Auto Rename Tag
+4.  Beautify
+5.  Chinese
+6.  ES7 React/Redux/
+7.  ESLint
+8.  HTML CSS Support
+9.  Indenticator
+10. Markdown Preview Github Styling
+11. open in browser
+12. Paradox Syntax
+13. vscode-icons
