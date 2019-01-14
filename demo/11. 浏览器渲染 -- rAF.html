@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .animation1 {
+      width: 100px;
+      height: 100px;
+      background: red;
+      position: relative;
+      animation: mymove 10s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes mymove {
+      from {
+        top: 0px;
+      }
+      to {
+        top: 200px;
+      }
+    }
+
+    .container {
+      width: 10px;
+      height: 30px;
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="animation1"></div>
+  <div class="container" id="container"></div>
+  <img src="./santa.gif">
+  <script>
+    ;
+    (function (window, document) {
+      var a = (new Date()).getTime();
+      var container = document.querySelector('#container');
+      var width = 10;
+
+      var requestAnFr = (function () {
+        return window.requestAnimationFrame ||
+          window.webkitRequestAnimationFrame ||
+          window.mozRequestAnimationFrame ||
+          function (callback) {
+            window.setTimeout(callback, 1000 / 60);
+          };
+      })();
+
+      function animation() {
+        if (width >= 1000) {
+          width = 10;
+        }
+        width += 10;
+        container.style.width = width + 'px';
+
+        if (width === 500) {
+          var a = (new Date()).getTime();
+          while ((new Date()).getTime() - a < 3000) {}
+        }
+        requestAnFr(animation);
+      }
+
+      animation();
+    })(this, document);
+  </script>
+</body>
+
+</html>

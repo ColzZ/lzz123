@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Title</title>
+	<style>
+		div {
+			width: 100px;
+			height: 100px;
+			background: lightgreen;
+		}
+	</style>
+	<script>
+		var times = (new Date()).getTime();
+		console.log('-------', times);
+		window.onload = function() {
+			console.log('loaded', (new Date()).getTime() - times);
+		}
+	</script>
+
+	<script defer src="/js/logDiv.js"></script>
+	<link rel="stylesheet" href="/css/sleep5000-common.css">
+	<script src="/js/blok.js"></script>
+
+</head>
+<body>
+	<div>  111111  </div>
+	<div>  222222  </div>
+	<div>  333333  </div>
+	<div>  444444  </div>
+</body>
+</html>

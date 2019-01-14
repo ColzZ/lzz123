@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <script src="./jq_183.js"></script>
+  <script>
+    $(document).ready(function () {
+
+      $("#btn").click(function () {
+
+        $.ajax({
+          url: "http://10.11.2.29:8080/gmtt_psd/assets/static/data/jp.json",
+          type: "GET",
+          dataType: "jsonp", //指定服务器返回的数据类型
+          jsonp:'callback',
+          jsonpCallback:"jsonpCallback",
+          success: function (...data) {
+            console.log(111, { data });
+          },
+          error: function(...data) {
+            console.log(222, { data });
+          }
+        });
+
+      });
+
+    });
+  </script>
+</head>
+
+<body>
+  <input id="btn" type="button" value="跨域获取数据" />
+</body>
+
+</html>
