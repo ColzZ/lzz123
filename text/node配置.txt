@@ -58,20 +58,20 @@ yarn config set prefix "C:\Users\lzZ\AppData\Local\Yarn"  --更改全局安装�
 
 /* ************************ START ************************ */
 【nodejs】
-+ node_cache            // 一些缓存文件
-+ node_global           // npm -g 全局安装位置
-  + bin                 // 空
-  + node_modules        // 全局安装的包位置
-    + webpack
-    + webpack-cli
-    + ......
++ node_cache/           // 一些缓存文件
++ node_global/          // npm -g 全局安装位置
+  + bin/                // 空
+  + node_modules/       // 全局安装的包位置
+    + webpack/
+    + webpack-cli/
+    + ....../
   - webpack             // 全局安装包的cmd
   - webpack.cmd
   - webpack-cli
   - webpack-cli.cmd
   - ......
-+ node_modules
-  + npm                 //npm相关配置文件夹&文件
++ node_modules/
+  + npm/                //npm相关配置文件夹&文件
 - node.exe
 - npm
 - npm.cmd
