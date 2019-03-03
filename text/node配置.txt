@@ -4,15 +4,33 @@
 
 /* ************************ START ************************ */
 【系统变量-Path】  // 自动注册安装目录
-D:\exe2\nodejs\;                              // where npm
-D:\exe2\yarn\bin\;                            // where yarn
+D:\exe2\nodejs\;                              // where npm        [D:\exe2\nodejs\npm]
+D:\exe2\yarn\bin\;                            // where yarn       [D:\exe2\yarn\bin\yarn]
 
 【用户变量-PATH】  // 添加全局路径安装包路径
-D:\exe2\nodejs\node_global;                   // npm -g bin
-C:\Users\lzZ\AppData\Local\Yarn\bin           // yarn global bin
-C:\Users\lzZ\AppData\Local\Yarn\Data\global;  // yarn global dir
+D:\exe2\nodejs\node_global;                   // npm -g bin       [D:\exe2\nodejs\node_global]
+C:\Users\lzZ\AppData\Local\Yarn\bin;          // yarn global bin  [C:\Users\lzZ\AppData\Local\Yarn\bin]
 
-yarn 和 npm 不一样
+C:\Users\lzZ\AppData\Local\Yarn\Data\global;  // yarn global dir  [C:\Users\lzZ\AppData\Local\Yarn\Data\global]
+/* ************************* END ************************* */
+
+
+
+/* ************************ START ************************ */
+where npm             --npm安装位置
+where yarn            --yarn安装位置
+npm -g bin            --npm全局安装位置
+yarn global bin       --yarn全局安装位置
+yarn global dir       --yarn全局安装位置
+
+npm config ls         --npm配置信息
+yarn config list      --yarn配置信息
+npm -g ls --dept 0    --npm全局已安装的包
+yarn global list      --yarn全局已安装的包
+
+npm config set cache "D:\exe2\nodejs\node_cache"          --更改缓存路径
+npm config set prefix "D:\exe2\nodejs\node_global"        --更改全局安装路径
+yarn config set prefix "C:\Users\lzZ\AppData\Local\Yarn"  --更改全局安装路径
 /* ************************* END ************************* */
 
 
@@ -34,24 +52,6 @@ yarn 和 npm 不一样
 1. yarn 不像 npm  确定好全局安装路径后 [node_modules/webpack] 、 webpack 、 wepack.cmd 在同一个文件下自动生成
 2. yarn 比 npm 多了一个单独的 dir路径 -> [node_models] 、 package.json 、 yarn.lock
 3. yarn 这个dir位置也需要注册到环境变量
-/* ************************* END ************************* */
-
-
-
-/* ************************ START ************************ */
-where npm             --npm安装位置
-where yarn            --yarn安装位置
-npm -g bin            --npm全局安装位置
-yarn global bin       --yarn全局安装位置
-yarn global dir       --yarn全局安装位置
-
-npm config ls         --npm配置信息
-yarn config list      --yarn配置信息
-yarn global list      --yarn全局已安装的包
-
-npm config set cache "D:\exe2\nodejs\node_cache"          --更改缓存路径
-npm config set prefix "D:\exe2\nodejs\node_global"        --更改全局安装路径
-yarn config set prefix "C:\Users\lzZ\AppData\Local\Yarn"  --更改全局安装路径
 /* ************************* END ************************* */
 
 
