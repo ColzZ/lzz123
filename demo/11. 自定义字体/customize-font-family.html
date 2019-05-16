@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>自定义字体Demo</title>
+	<style type="text/css">
+		@font-face {
+			font-family: myFirstFont123;
+			src: url('Sansation_Light.eot');
+			/* IE9 Compat Modes */
+			src: url('Sansation_Light.eot?#iefix') format('embedded-opentype'),
+				/* IE6-IE8 */
+				url('Sansation_Light.ttf') format('truetype');
+			/* Safari, Android, iOS */
+		}
+
+		.box {
+			font-size: 40px;
+		}
+
+		.custom {
+			font-family: 'myFirstFont123';
+		}
+	</style>
+</head>
+
+<body>
+	<div class="box">
+		<div class="custom">你好，世界</div>
+		<div>你好，世界</div>
+
+		<div class="custom">123456789</div>
+		<div>123456789</div>
+
+		<div class="custom">HELLO,world!</div>
+		<div>HELLO,world!</div>
+	</div>
+
+</body>
+
+</html>
+
+<!-- @font-face {
+font-family: ‘YourWebFontName’;
+src: url(‘YourWebFontName.eot’); /* IE9 Compat Modes */
+src: url(‘YourWebFontName.eot?#iefix’) format(‘embedded-opentype’), /* IE6-IE8 */
+url(‘YourWebFontName.woff’) format(‘woff’), /* Modern Browsers */
+url(‘YourWebFontName.ttf’) format(‘truetype’), /* Safari, Android, iOS */
+url(‘YourWebFontName.svg#YourWebFontName’) format(‘svg’); /* Legacy iOS */
+} -->

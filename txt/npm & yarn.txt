@@ -17,20 +17,20 @@ C:\Users\lzZ\AppData\Local\Yarn\Data\global;  // yarn global dir  [C:\Users\lzZ\
 
 
 /* ************************ START ************************ */
-where npm             --npm安装位置
-where yarn            --yarn安装位置
-npm -g bin            --npm全局安装位置
-yarn global bin       --yarn全局安装位置
-yarn global dir       --yarn全局安装位置
+where npm             -- npm 安装位置
+where yarn            -- yarn安装位置
+npm -g bin            -- npm 全局包【.cmd + node_modules】
+yarn global bin       -- yarn全局包【.cmd】
+yarn global dir       -- yarn全局包【node_modules】
 
-npm config ls         --npm配置信息
-yarn config list      --yarn配置信息
-npm -g ls --dept 0    --npm全局已安装的包
-yarn global list      --yarn全局已安装的包
+npm config ls         -- npm 配置信息
+yarn config list      -- yarn配置信息
+npm -g ls --dept 0    -- npm 全局已安装的包
+yarn global list      -- yarn全局已安装的包
 
-npm config set cache "D:\exe2\nodejs\node_cache"          --更改缓存路径
-npm config set prefix "D:\exe2\nodejs\node_global"        --更改全局安装路径
-yarn config set prefix "C:\Users\lzZ\AppData\Local\Yarn"  --更改全局安装路径
+npm config set cache "D:\exe2\nodejs\node_cache"          -- 更改缓存路径
+npm config set prefix "D:\exe2\nodejs\node_global"        -- 更改全局安装路径
+yarn config set prefix "C:\Users\lzZ\AppData\Local\Yarn"  -- 更改全局安装路径
 /* ************************* END ************************* */
 
 
