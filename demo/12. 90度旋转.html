@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #rotateBox {
+            margin: 100px auto;
+            width: 200px;
+            height: 400px;
+            border: 1px solid #F00;
+            perspective: 1000px;
+            perspective-origin: 50% 70%;
+            transition: 1s;
+            transform-style: preserve-3d;
+            transition-timing-function: linear;
+        }
+
+        .card {
+            position: absolute;
+            top: 10;
+            width: 200px;
+            height: 400px;
+            border: 1px solid #00F;
+            line-height: 400px;
+            font-size: 200px;
+            text-align: center;
+            transition: 1s;
+            transition-timing-function: linear;
+        }
+
+        .card:nth-child(1) {
+            color: #000;
+            background: #F00E;
+        }
+
+        .card:nth-child(2) {
+            color: #000;
+            background: #0F0E;
+        }
+
+        .card:nth-child(3) {
+            color: #000;
+            background: #00FE;
+        }
+
+        .card:nth-child(4) {
+            color: #000;
+            background: #FF0E;
+        }
+
+        .card:nth-child(5) {
+            color: #000;
+            background: #0FFE;
+        }
+
+        .card:nth-child(6) {
+            color: #000;
+            background: #F0FE;
+        }
+
+        .card:nth-child(7) {
+            color: #000;
+            background: #000E;
+        }
+
+        .card:nth-child(8) {
+            color: #000;
+            background: #0aaE;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="rotateBox">
+        <div class="card">1</div>
+        <div class="card">2</div>
+        <div class="card">3</div>
+        <div class="card">4</div>
+        <div class="card">5</div>
+        <!-- <div class="card">6</div> -->
+    </div>
+
+    <script src="js/jquery-3.1.1.js"></script>
+    <script>
+        function paintDisc(num) {
+            var cardDiv = $('#rotateBox .card');
+            var cardNum = cardDiv.length;
+            var cycleNum = Math.floor(num / cardNum);
+            var startNum = num % cardNum;
+            var leftNum = Math.floor(cardNum / 2);
+            var rightNum = cardNum - leftNum - 1;
+            var leftDeg = 45 / leftNum;
+            var rightDeg = 45 / rightNum;
+
+            var axisDeg = -cycleNum * 360;
+
+            var zeroDeg = axisDeg;
+            var zeroNum = 0;
+            if (startNum === 0) {
+                var zeroNum = 0;
+            } else if (startNum > rightNum) {
+                zeroDeg = zeroDeg - 315 - leftDeg * (startNum - rightNum - 1);
+                zeroNum = startNum - rightNum - 1;
+            } else {
+                zeroDeg -= rightDeg * startNum;
+                zeroNum = startNum;
+            }
+
+            cardDiv.map((i, v) => {
+                var cardDeg = zeroDeg;
+                if (i !== 0) {
+                    if (startNum > rightNum) {
+                        if (startNum - i > rightNum) {
+                            cardDeg = zeroDeg + leftDeg * i;
+                        } else if (startNum - i <= rightNum && startNum - i >= 0) {
+                            cardDeg = zeroDeg + leftDeg * (startNum - 1 - rightNum) + 270 + rightDeg * (
+                                rightNum - (startNum - i));
+                        } else {
+                            cardDeg = zeroDeg + leftDeg * (startNum - 1 - rightNum) + 315 + leftDeg * (i -
+                                startNum);
+                        }
+                    } else {
+                        if (i <= startNum) {
+                            cardDeg = zeroDeg + rightDeg * i;
+                        } else if (i > startNum && i <= startNum + leftNum) {
+                            cardDeg = zeroDeg + rightDeg * startNum + leftDeg * (i - startNum);
+                        } else {
+                            cardDeg = zeroDeg + rightDeg * startNum + 315 + rightDeg * (i - (startNum +
+                                leftNum) - 1);
+                        }
+                    }
+                }
+                var paceNum = 0;
+                if (i !== startNum) {
+                    if (i > startNum) {
+                        paceNum = i - startNum > leftNum ? (i - startNum) - leftNum - rightNum - 1 : i -
+                            startNum;
+                    } else {
+                        paceNum = startNum - i > rightNum ? leftNum - (startNum - i - rightNum) + 1 : i -
+                            startNum;
+                    }
+                }
+
+                var percentage = paceNum / (paceNum > 0 ? leftNum : rightNum);
+
+                var scale = 1 - Math.abs(percentage) * 0.4;
+
+                var translateX = -(percentage) * Math.abs(percentage) * 100 + 'px';
+
+                var translateY = Math.abs(percentage) * 50 + 'px';
+
+                cardDiv.eq(i).css({
+                    'transform': 'rotateY(' + cardDeg + 'deg) translateZ(300px) rotateY(' + (-cardDeg) +
+                        'deg) scale(' + scale + ') translate(' + translateX + ',' + translateY + ')'
+                });
+                if (paceNum === 0) {
+                    cardDiv.eq(i).addClass('card-main');
+                } else {
+                    cardDiv.eq(i).removeClass('card-main');
+                }
+            })
+        }
+
+        function discRun() {
+            var num = 0;
+            paintDisc(num);
+            var times = new Date();
+
+            function rqa() {
+                if (new Date() - times > 3000) {
+                    times = new Date();
+                    num += 1;
+                    paintDisc(num);
+                }
+                requestAnimationFrame(rqa)
+            }
+            requestAnimationFrame(rqa);
+        }
+
+        $(document).ready(function () {
+            discRun();
+        })
+    </script>
+</body>
+
+</html>

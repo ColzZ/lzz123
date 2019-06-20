@@ -1,14 +1,7 @@
 ﻿{
     "workbench.colorTheme": "Atom One Dark",
-    /* 字体大小 */
-    "editor.fontSize": 14,
-    /* 窗口的缩放级别 */
-    "window.zoomLevel": 0,
-    /* 是否有小地图 */
-    "editor.minimap.enabled": true,
-    /* tab距离 */
+    "workbench.iconTheme": "vscode-icons",
     "editor.tabSize": 2,
-    /* 剪裁尾随空格 */
     "files.trimTrailingWhitespace": true,
     "files.associations": {
         "*.tpl": "html"
@@ -23,16 +16,12 @@
         "tab.activeBackground": "#999",
         "tab.inactiveBackground": "#0000",
         /* tab 边框颜色 */
-        "tab.border": "#999",
-        /* 光标颜色 */
-        "editorCursor.foreground": "#fff"
+        "tab.border": "#999"
     },
-    "editor.multiCursorModifier": "ctrlCmd",
     "editor.snippetSuggestions": "top",
-    "git.ignoreMissingGitWarning": true,
+    "update.mode": "none",
+    // indenticator 插件控制
     "indenticator.style": "solid",
     "indenticator.color.dark": "#933",
-    "workbench.iconTheme": "vscode-icons",
-    "javascript.updateImportsOnFileMove.enabled": "never",
-    "update.channel": "none",
+    "editor.fontSize": 16,
 }
